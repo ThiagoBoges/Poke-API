@@ -5,7 +5,7 @@ Um projeto Full-Stack que implementa uma Pokédex interativa, permitindo que usu
 ## ✨ Funcionalidades
 
 * **Autenticação de Usuários:** Sistema completo de registro e login com autenticação baseada em JSON Web Tokens (JWT).
-* **Listagem de Pokémon:** Exibição dos 151 Pokémon da primeira geração em formato de cards.
+* **Listagem de Pokémon:** Exibição dos 100 Pokémon da primeira geração em formato de cards.
 * **Busca de Dados Detalhados:** Carregamento dinâmico de informações como stats (HP, Ataque, Defesa) e tipos de cada Pokémon.
 * **Filtragem por Tipo:** Interface com botões para filtrar a lista de Pokémon exibida com base no seu tipo.
 * **Navegação Protegida:** Utilização de Route Guards no Angular para proteger páginas que só podem ser acessadas por usuários logados.
@@ -88,8 +88,7 @@ Siga os passos abaixo para executar a aplicação na sua máquina.
 | :----- | :-------------------- | :----------------------------------------
 | `POST` | `/register`           | Registra um novo usuário.                 
 | `POST` | `/login`              | Autentica um usuário e retorna um token. 
-| `GET`  | `/pokemons`           | Lista os Pokémon (com paginação).        
-| `GET`  | `/types`              | Lista os tipos de Pokémon.                
+| `GET`  | `/pokemons`           | Lista os Pokémon (com paginação).              
 
 ## ✒️ Autor
 
