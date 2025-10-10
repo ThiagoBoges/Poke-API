@@ -1,0 +1,61 @@
+<div class="list-container">
+  
+  <header class="pokedex-header">
+    <h1>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Pok%C3%A9_Ball_icon.svg" alt="Pokédex Logo"> 
+      Pokédex Digital
+    </h1>
+    <p>Explore o mundo dos Pokémon com nossa Pokédex interativa.</p>
+  </header>
+  
+  <div class="stats-bar">
+    <div><span>{{ allPokemons.length }}</span><p>Pokémon</p></div>
+    <div><span>{{ types.length - 1 }}</span><p>Tipos</p></div>
+    <div><span>9</span><p>Gerações</p></div>
+  </div>
+
+  <div class="filter-section">
+    <h2>Pokémon Descobertos</h2>
+    <div class="filter-pills">
+      <button 
+        *ngFor="let type of types"
+        (click)="filterPokemons(type)"
+        [class.active]="selectedType === type"
+        class="pill">
+        {{ type | titlecase }}
+      </button>
+    </div>
+  </div>
+
+  <main class="pokemon-grid" *ngIf="!loading && !errorMessage">
+    <article *ngFor="let p of filteredPokemons" class="pokemon-card">
+      <div class="card-header">
+        <span class="poke-id">{{ formatId(p.id) }}</span>
+        <div class="type-badges">
+          <span class="type" *ngFor="let t of p.types">{{ t | titlecase }}</span>
+        </div>
+      </div>
+      <div class="pokemon-image">
+        <img [src]="p.image" [alt]="p.name | titlecase">
+      </div>
+      <h2 class="pokemon-name">{{ p.name | titlecase }}</h2>
+      <div class="stats-list">
+        <div class="stat-row">
+          <span class="label">HP</span><span class="value">{{ statValue(p,'hp') }}</span>
+        </div>
+        <div class="progress"><div class="progress-bar" [style.width.%]="statValue(p,'hp')"></div></div>
+        <div class="stat-row">
+          <span class="label">Ataque</span><span class="value">{{ statValue(p,'attack') }}</span>
+        </div>
+        <div class="progress"><div class="progress-bar" [style.width.%]="statValue(p,'attack')"></div></div>
+        <div class="stat-row">
+          <span class="label">Defesa</span><span class="value">{{ statValue(p,'defense') }}</span>
+        </div>
+        <div class="progress"><div class="progress-bar" [style.width.%]="statValue(p,'defense')"></div></div>
+      </div>
+    </article>
+  </main>
+
+  <div *ngIf="loading" class="loading-state">Carregando Pokémons...</div>
+  <div *ngIf="errorMessage" class="error-state">{{ errorMessage }}</div>
+</div>
