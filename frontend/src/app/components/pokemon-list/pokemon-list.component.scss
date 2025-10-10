@@ -1,0 +1,121 @@
+:host {
+  font-family: 'Poppins', sans-serif;
+  color: #333;
+  background-color: #f8f7f5;
+}
+
+.list-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.pokedex-header {
+  background-color: #f08030;
+  color: white;
+  padding: 1.5rem 2rem 1rem 2rem;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+
+  h1 { 
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin: 0 0 0.5rem 0; 
+    font-size: 1.8rem; 
+    img { width: 32px; filter: invert(1); }
+  }
+  p { 
+    margin: 0; 
+    font-size: 0.9rem; 
+    opacity: 0.9; 
+    padding-left: 48px;
+  }
+}
+
+.stats-bar {
+  background-color: #5855a0;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 0.8rem;
+  text-align: center;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  
+  span { font-size: 1.2rem; font-weight: 700; }
+  p { margin: 0.2rem 0 0; font-size: 0.8rem; }
+}
+
+main {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.pill {
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  border-radius: 999px;
+  border: 1px solid #e0e0e0;
+  background: #fff;
+  color: #555;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &.active {
+    background: #f08030;
+    border-color: #f08030;
+    color: white;
+    font-weight: 600;
+  }
+}
+
+.pokemon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.pokemon-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  border: 1px solid #eee;
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .poke-id { color: #999; font-size: 0.9rem; }
+    .type-badges { display: flex; gap: 0.4rem; }
+    .type { padding: 0.2rem 0.5rem; border-radius: 4px; font-size: 0.75rem; background: #eee; }
+  }
+  .pokemon-image { height: 120px; text-align: center; img { max-height: 120px; } }
+  .pokemon-name { margin: 0.5rem 0; font-size: 1.2rem; }
+  .stats-list {
+    .stat-row { display: flex; justify-content: space-between; font-size: 0.8rem; }
+    .progress { height: 6px; background: #eee; border-radius: 3px; margin: 0.2rem 0 0.5rem; }
+    .progress-bar { height: 100%; background: #6890f0; }
+  }
+}
+
+.error-state {
+  text-align: center;
+  padding: 1rem;
+  color: #c25b1c; 
+  background-color: #fce2c2; 
+  border: 1px solid #fca96a;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  font-weight: 500;
+}
+.loading-state {
+  text-align: center; padding: 2rem; font-weight: 500;
+}

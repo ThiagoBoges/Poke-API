@@ -1,0 +1,10 @@
+@import '../login/login.component.scss';
+
+.success-message {
+    margin-top: 1rem;
+    background: rgba(46, 204, 113, 0.2);
+    color: #2ecc71;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}

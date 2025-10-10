@@ -1,29 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
-html, body {
+body, html {
   height: 100%;
   margin: 0;
-  padding: 0;
-  overflow-y: auto;
-  overflow-x: hidden;
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #ff3c3c, #ff9f1a, #ffc107);
-  background-attachment: fixed;
-  color: #fff;
-}
-
-
-.login-container {
+  background: radial-gradient(circle at top, #ffcb05, #ff3c3c, #1a1a2e);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  color: #e0e0e0;
+  overflow: hidden;
 }
 
-.login-card {
-  background: rgba(26, 26, 46, 0.9);
+.login-container {
+  max-width: 400px;
+  margin: 80px auto; 
+  padding: 40px;
   border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.2);
+  box-shadow: none;
+  text-align: center;
+}
+
+
+.login-card {
+  border-radius: 20px;
+  box-shadow: none;
   padding: 3rem 2rem;
   width: 350px;
   text-align: center;
@@ -31,6 +32,7 @@ html, body {
   position: relative;
 }
 
+/* Pokébola decorativa */
 .pokeball {
   width: 80px;
   height: 80px;
@@ -95,6 +97,7 @@ input:focus {
   box-shadow: 0 0 10px #ffcb05;
 }
 
+/* Botão */
 button {
   background: linear-gradient(to right, #ff3c3c, #ffcb05);
   color: #1a1a2e;
@@ -134,5 +137,20 @@ button:disabled {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+.register-link {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #ccc;
+
+  a {
+    color: #ffcb05;
+    text-decoration: none;
+    font-weight: 600;
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
